@@ -27,11 +27,17 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebb-Sn-OFg">
                                         <rect key="frame" x="126" y="0.0" width="123" height="31"/>
+                                        <connections>
+                                            <action selector="swichAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="KfQ-Cm-fG1"/>
+                                        </connections>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5j-CU-MJd">
                                         <rect key="frame" x="252" y="0.0" width="121" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearButAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cSp-YH-npl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -61,14 +67,18 @@
                                                     </progressView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="bBj-Wp-Afj">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bBj-Wp-Afj">
                                                 <rect key="frame" x="20" y="132" width="337" height="34"/>
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FwW-yL-H01">
-                                                        <rect key="frame" x="-2" y="0.0" width="250.33333333333334" height="35"/>
+                                                        <rect key="frame" x="-2" y="0.0" width="167.66666666666666" height="35"/>
+                                                        <connections>
+                                                            <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="1kN-yg-Ur3"/>
+                                                        </connections>
                                                     </slider>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opJ-CJ-wpN">
-                                                        <rect key="frame" x="306.33333333333331" y="0.0" width="30.666666666666686" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0,0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opJ-CJ-wpN">
+                                                        <rect key="frame" x="173.66666666666663" y="0.0" width="163.33333333333337" height="34"/>
+                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -99,6 +109,9 @@
                                                         <rect key="frame" x="109" y="236.00000000000006" width="119" height="34.333333333333314"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Set this time"/>
+                                                        <connections>
+                                                            <action selector="setThisTimeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8Z-zs-cYN"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -127,6 +140,15 @@
                             <constraint firstItem="GOl-DC-luo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="laZ-Gn-yC8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outDatePicker" destination="p2J-Sr-FCg" id="oBo-GO-q9z"/>
+                        <outlet property="outProgressView" destination="tgZ-iq-9y5" id="7Lm-NM-Tb9"/>
+                        <outlet property="outSlider" destination="FwW-yL-H01" id="7Ud-eI-zlQ"/>
+                        <outlet property="outSwich" destination="ebb-Sn-OFg" id="QFc-wh-35c"/>
+                        <outlet property="outTF" destination="opJ-CJ-wpN" id="TvA-VW-onF"/>
+                        <outlet property="outTimeLbl" destination="UCQ-8s-Izb" id="uji-wN-kNA"/>
+                        <outlet property="outVolLevel" destination="sqS-yV-hJi" id="OvJ-gK-A0s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
