@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     @IBOutlet private var outVolLevel: UILabel!
     @IBOutlet private var outProgressView: UIProgressView!
     @IBOutlet private var outTF: UITextField!
@@ -32,12 +32,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func swichAction(_ sender: Any) {
-        if outSwich.isOn {
-            outTimeLbl.backgroundColor = #colorLiteral(red: 0.7372549176, green: 0.7372549176, blue: 0.7372549176, alpha: 1)
-        } else {
-            outTimeLbl.backgroundColor = .red
+        outTimeLbl.backgroundColor = outSwich.isOn ? #colorLiteral(red: 0.7372549176, green: 0.7372549176, blue: 0.7372549176, alpha: 1) : .red
         }
-    }
+    
         
     @IBAction private func clearButAction(_ sender: Any) {
         outTimeLbl.text = ""
